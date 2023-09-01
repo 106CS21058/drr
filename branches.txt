@@ -1,0 +1,280 @@
+
+admin@PC16 MINGW64 /c/kl
+$ git init
+Initialized empty Git repository in C:/kl/.git/
+
+admin@PC16 MINGW64 /c/kl (master)
+$ git clone https://github.com/106CS21058/drr.git
+Cloning into 'drr'...
+warning: You appear to have cloned an empty repository.
+
+admin@PC16 MINGW64 /c/kl (master)
+$ cd drr
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ touch j1.txt
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ notepad j1.txt
+/usr/bin/notepad: line 10: exec: notepad.exe: not found
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ cat j1.txt
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        j1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ git add .
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   j1.txt
+
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ git commit -m "added something"
+[main (root-commit) 4451fdb] added something
+ 1 file changed, 1 insertion(+)
+ create mode 100644 j1.txt
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ git push -u origin main
+info: please complete authentication in your browser...
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 211 bytes | 52.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/106CS21058/drr.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ git checkout -b cse
+Switched to a new branch 'cse'
+
+admin@PC16 MINGW64 /c/kl/drr (cse)
+$ git branch
+* cse
+  main
+
+admin@PC16 MINGW64 /c/kl/drr (cse)
+$ git checkout -b ec
+Switched to a new branch 'ec'
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$ git branch
+  cse
+* ec
+  main
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$ git checkout cse
+Switched to branch 'cse'
+
+admin@PC16 MINGW64 /c/kl/drr (cse)
+$ git branch
+* cse
+  ec
+  main
+
+admin@PC16 MINGW64 /c/kl/drr (cse)
+$ git branch -d ec
+Deleted branch ec (was 4451fdb).
+
+admin@PC16 MINGW64 /c/kl/drr (cse)
+$ git branch
+* cse
+  main
+
+admin@PC16 MINGW64 /c/kl/drr (cse)
+$ git chechout -b ec
+git: 'chechout' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+
+admin@PC16 MINGW64 /c/kl/drr (cse)
+$ git checkout -b ec
+Switched to a new branch 'ec'
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$ git branch
+  cse
+* ec
+  main
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$ git status
+On branch ec
+nothing to commit, working tree clean
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$ git merge
+fatal: No remote for the current branch.
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> ec
+
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$ git merge origin drr
+merge: origin - not something we can merge
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$ git merge origin cse
+merge: origin - not something we can merge
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$ git merge origin ^[[200~https://github.com/106CS21058/drr.git~
+merge: origin - not something we can merge
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$ git merge origin https://github.com/106CS21058/drr.git
+merge: origin - not something we can merge
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ git merge origin ec
+merge: origin - not something we can merge
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ git checkout ec
+Switched to branch 'ec'
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$ git branch
+  cse
+* ec
+  main
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ git remote add origin https://github.com/106CS21058/drr.git
+error: remote origin already exists.
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ remote -v
+bash: remote: command not found
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ git remote -v
+origin  https://github.com/106CS21058/drr.git (fetch)
+origin  https://github.com/106CS21058/drr.git (push)
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ git merge
+Already up to date.
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ git pull
+Already up to date.
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        h1.txt.txt
+        t1.txt.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ git add .
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ git commit -m "added txt files"
+[main aa53b3d] added txt files
+ 2 files changed, 2 insertions(+)
+ create mode 100644 h1.txt.txt
+ create mode 100644 t1.txt.txt
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 334 bytes | 334.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/106CS21058/drr.git
+   4451fdb..aa53b3d  main -> main
+
+admin@PC16 MINGW64 /c/kl/drr (main)
+$ git checkout ec
+Switched to branch 'ec'
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$ git status
+On branch ec
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        bhk.txt.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$ git add .
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$ git commit -m "adding bhk"
+[ec 46c7414] adding bhk
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 bhk.txt.txt
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$ git push -u origin ec
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 264 bytes | 264.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'ec' on GitHub by visiting:
+remote:      https://github.com/106CS21058/drr/pull/new/ec
+remote:
+To https://github.com/106CS21058/drr.git
+ * [new branch]      ec -> ec
+branch 'ec' set up to track 'origin/ec'.
+
+admin@PC16 MINGW64 /c/kl/drr (ec)
+$
